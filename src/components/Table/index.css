@@ -1,0 +1,18 @@
+.table_row {
+    cursor: pointer;
+    /*transition: all .1s;*/
+}
+
+.table_row:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.table_row:hover th {
+    color: #ffffff;
+}
+
+.table_row:hover td {
+    color: #ffffff;
+}
+

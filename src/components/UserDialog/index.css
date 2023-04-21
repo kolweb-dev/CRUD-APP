@@ -1,0 +1,38 @@
+.form__inner{
+    width: 500px;
+    padding-top: 25px;
+}
+
+.form__inner{
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog__text-field {
+    width: 300px !important;
+}
+
+.formik_actions{
+    display: flex;
+    justify-content: space-between;
+}
+
+.formik_actions > .formik_actions-btn{
+    background-color: #ccc;
+    color: #333333;
+    transition: all .1s;
+}
+
+.formik_actions > .formik_actions-btn:hover{
+    color: #ffffff;
+    background-color: #333333;
+}
+
+.formik_actions-btn.btn-delete{
+    background-color: #860000;
+    color: #ffffff;
+}
+
+.formik_actions-btn.btn-delete:hover{
+    background-color: red;
+}
