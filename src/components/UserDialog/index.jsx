@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { object, string } from 'yup'
+
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 
@@ -17,6 +19,48 @@ import './index.css'
 import {createUser, deleteUser, fetchUsers, updateUser} from "../../store/userSlice";
 import {useNavigate} from "react-router-dom";
 
+
+const validationSchema = object().shape({
+    name: string().min(4).max(255).email().required().label('Name'),
+    username: string().min(4).max(255).email().required().label('Username'),
+    email: string().min(4).max(255).email().required().label('Email'),
+    address: object().shape({
+            street: string().min(4).max(255).email().required().label('Address suite'),
+        city: string().min(4).max(255).email().required().label('Address city'),
+        zipcode: string().min(4).max(255).email().required().label('Address zipcode'),
+        geo: object().shape({
+            lat: string().min(4).max(255).email().required().label('Address lat'),
+            lng: string().min(4).max(255).email().required().label('Address lng'),
+
+        })}),
+    phone: string().min(4).max(255).email().required().label('Phone'),
+    website: string().min(4).max(255).email().required().label('Website'),
+    company: object().shape({
+        name: string().min(4).max(255).email().required().label('Company name'),
+        catchPhrase: string().min(4).max(255).email().required().label('Company catchPhrase'),
+        bs: string().min(4).max(255).email().required().label('Company bs'),
+    })
+})
+// name: '',
+//     username: '',
+//     email: "",
+//     address: {
+//     street: "",
+//         suite: "",
+//         city: "",
+//         zipcode: "",
+//         geo: {
+//         lat: "",
+//             lng: ""
+//     }
+// },
+// phone: "",
+//     website: "",
+//     company: {
+//     name: "",
+//         catchPhrase: "",
+//         bs: ""
+// }
 const UserDialog = ({isOpen = false, setIsOpne, isEdit, user}) => {
 
     const navigate = useNavigate()
@@ -42,7 +86,7 @@ const UserDialog = ({isOpen = false, setIsOpne, isEdit, user}) => {
             <DialogContent>
                 <Formik
                     initialValues={isEdit ? user : initialUser}
-                    // validationSchema={}
+                    validationSchema={validationSchema}
                     onSubmit={ (values, { resetForm }) => {
                         if (isEdit){
                              dispatch(updateUser({id:user.id, user: values}))
