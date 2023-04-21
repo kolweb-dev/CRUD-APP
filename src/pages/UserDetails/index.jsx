@@ -34,7 +34,7 @@ const UserDetails = () => {
             setNextUserId(users[currentUserIndex + 1]?.id)
             setPrevUserId(users[currentUserIndex - 1]?.id)
         }
-    }, [dispatch, users, userId])
+    }, [dispatch, users.length, userId])
 
     const handleChangeUser = (id) => navigate(`/users/${id}`)
 

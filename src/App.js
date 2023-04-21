@@ -10,10 +10,22 @@ import PageNotFound from './pages/404'
 import Header from "./components/Header";
 
 import "./App.css";
+import {fetchUsers} from "./store/userSlice";
+import UserDetails from './pages/UserDetails'
 
-
-const UserDetails = React.lazy(() => import('./pages/UserDetails'));
+// const UserDetails = React.lazy(() => import('./pages/UserDetails'));
 function App() {
+    const dispatch = useDispatch()
+    const {
+        users,
+        loading
+    } = useSelector(state => state.users)
+
+    useEffect(() => {
+        if (!users.length) {
+            dispatch(fetchUsers())
+        }
+    }, [dispatch, users.length])
 
     return (
         <div className='app'>
