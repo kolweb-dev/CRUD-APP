@@ -1,12 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { startTransition } from 'react';
-
-
-
 import { useNavigate } from 'react-router-dom';
-
-
-
 import {useTheme} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
@@ -79,13 +73,6 @@ const UserTable = (props) => {
         </Box>
     );
 }
-
-
-// id, name, username
-function createData(id, name, username) {
-    return {id, name, username};
-}
-
 
 export default function CustomPaginationActionsTable({users}) {
     const [page, setPage] = React.useState(0);

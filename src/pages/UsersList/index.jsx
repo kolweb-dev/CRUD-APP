@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from "react-redux";
 import {fetchUsers} from "../../store/userSlice";
-import {addUser} from '../../store/userSlice'
 
 import Loading from "../../components/Loading";
 
@@ -22,7 +21,7 @@ const UserList = () => {
         if (!users.length) {
             dispatch(fetchUsers())
         }
-    }, [])
+    }, [users.length, dispatch])
 
 
     if (loading) {

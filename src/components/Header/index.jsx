@@ -15,9 +15,6 @@ import './index.css'
 import {Link} from "react-router-dom";
 
 const drawerWidth = 240;
-const navItems = ['Home', 'Users'];
-
-
 const Header = () => {
 
     const [mobileOpen, setMobileOpen] = React.useState(false);

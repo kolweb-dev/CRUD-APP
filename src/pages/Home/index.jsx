@@ -9,13 +9,13 @@ const Home = () => {
     return (
         <div className='home'>
             <div className="container home_container">
-                <h1 className='home__title'>Привіт! Вітаємо у застосунку компанії 'Зернова столиця'!</h1>
+                <h1 className='home__title'>Hello! Welcome to the application of the company "Grain Capital"!</h1>
                 <p className='home__description'>
-                     Це CRUD (Create, Read, Update, Delete)
-                    додаток для управління списком клієнтів нашої компанії. Додаток дозволяє додавати, переглядати,
-                    оновлювати та видаляти інформацію про клієнтів, зокрема їх імена, контактну інформацію, а також
-                    інформацію про замовлення та інші дані. Нам дуже приємно, що ви використовуєте наш застосунок та
-                    допомагаєте нам зберігати нашу базу даних клієнтів оновленою та актуальною.
+                    This is CRUD (Create, Read, Update, Delete)
+                    application for managing the list of clients of our company. The application allows you to add, view,
+                    update and delete information about customers, including their names, contact information, and
+                    order information and other data. We are very pleased that you are using our application and
+                    help us keep our customer database up-to-date and up-to-date.
                 </p>
                     <Link
                         to='/users'
