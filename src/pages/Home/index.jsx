@@ -21,7 +21,7 @@ const Home = () => {
                         to='/users'
                         className='home__link'
                     >
-                        Будь ласка, перейдіть за посиланням на сторінку з користувачами.
+                        Please follow the link to the user page.
                     </Link>
             </div>
         </div>
